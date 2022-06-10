@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 sudo add-apt-repository universe
 sudo apt-get update
-sudo $echo "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >>/etc/apt/sources.list
-sudo $echo "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >>/etc/apt/sources.list
+sudo su -c 'echo -e "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list'
+sudo su -c 'echo -e "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list'
 sudo apt-get update
 
 echo "select ubuntu version"
