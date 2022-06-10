@@ -1,9 +1,7 @@
 #!/bin/bash
-sudo add-apt-repository universe
+
 sudo apt-get update
-sudo su -c 'echo -e "deb http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list'
-sudo su -c 'echo -e "deb-src http://us.archive.ubuntu.com/ubuntu/ xenial main universe" >> /etc/apt/sources.list'
-sudo apt-get update
+sudo add-apt-repository universe -y
 
 echo "select ubuntu version"
 echo " 1. 18.04 or newer"
@@ -22,12 +20,15 @@ case $option in
 *) echo "invalid option" ;;
 esac
 
+CPPFLAGS="$CPPFLAGS $(pkg-config --cflags-only-I guile-2.0)" CFLAGS="$CFLAGS $(pkg-config --cflags-only-other guile-2.0)" LDFLAGS="$LDFLAGS $(pkg-config --libs guile-2.0)"
+
 wget https://github.com/psych-d/graphics.h/raw/main/archive/libgraph-1.0.2.tar.gz
 
 tar -xvf libgraph-1.0.2.tar.gz
 
-cd libgraph-1.0.2 && ./configure && make && sudo make install && sudo cp /usr/local/lib/libgraph.* /usr/lib && cd ..
-rm -r libgraph-1.0.2 
-rm libgraph-1.0.2.tar.gz
+cd libgraph-1.0.2 && ./configure --disable-guile && sudo make && sudo make install && sudo cp /usr/local/lib/libgraph.* /usr/lib
+cd ..
+sudo rm -r libgraph-1.0.2
+sudo rm libgraph-1.0.2.tar.gz
 
 echo "Successfully installed !"
