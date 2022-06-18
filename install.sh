@@ -21,6 +21,7 @@
 
 #installing dependencies
 sudo apt update
+sudo apt-get update
 sudo apt install gcc g++ make -y
 sudo apt-get install libsdl-image1.2 libsdl1.2-dev libsdl-image1.2-dev libaudiofile-dev libdirectfb-dev libdirectfb-extra libfreetype6-dev libxext-dev x11proto-xext-dev libfreetype6 libaa1 libaa1-dev libslang2-dev libasound2 libasound2-dev libsdl1.2debian libart-2.0-dev -y
 
