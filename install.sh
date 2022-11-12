@@ -1,3 +1,4 @@
+#!/bin/bash
 # Auto install graphics.h in Ubuntu using bash script
 # Copyright (C) 2022  Dhruba Saha
 #
@@ -13,7 +14,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#!/bin/bash
 
 
 #installing dependencies
