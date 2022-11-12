@@ -10,3 +10,5 @@ chmod +x install.sh
 ./install.sh
 
 Enjoy
+
+Currently broken
